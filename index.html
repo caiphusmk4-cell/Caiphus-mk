@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#080b16">
+  <title>SEDUME AI PRO</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <div class="brand-mark">S</div>
+      <div><p class="eyebrow">AI VIDEO STUDIO</p><h1>SEDUME <span>AI PRO</span></h1></div>
+      <div id="providerBadge" class="status">Checking Veo…</div>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">YOUR STORY. CINEMATICALLY TOLD.</p>
+      <h2>Turn your ideas into<br><span>cinematic scenes.</span></h2>
+      <p class="muted">Create short Veo clips scene by scene, then combine them into a longer film using a video editor.</p>
+    </section>
+
+    <section class="panel">
+      <div class="section-head"><div><p class="eyebrow">01 / PROJECT</p><h3>Build a scene</h3></div><span class="tag">Google Veo</span></div>
+      <label for="projectTitle">Project title</label>
+      <input id="projectTitle" maxlength="80" value="HEAVEN-DEFYING ASH" placeholder="Name your project">
+      <label for="scenePrompt">Describe this scene</label>
+      <textarea id="scenePrompt" rows="6" maxlength="1800" placeholder="Describe the characters, setting, action, camera movement, lighting and mood.">A cinematic fantasy establishing shot of the ancient continent of Aurelia at sunrise. Vast mountains, floating stone islands, distant cultivation sect temples, drifting mist and warm golden light. Slow aerial camera movement, detailed realistic anime-inspired film look, atmospheric, widescreen.</textarea>
+      <div class="counter"><span id="promptCount">0</span>/1800 characters</div>
+      <div class="two">
+        <div><label for="aspect">Video shape</label><select id="aspect"><option value="16:9">16:9 Landscape</option><option value="9:16">9:16 Portrait</option></select></div>
+        <div><label for="style">Visual direction</label><select id="style"><option value="cinematic realistic anime">Cinematic realistic anime</option><option value="photorealistic fantasy film">Photorealistic fantasy</option><option value="stylized 3D animation">Stylized 3D animation</option></select></div>
+      </div>
+      <button id="generateBtn" class="primary">✦ Generate scene with Veo</button>
+      <p class="hint">Each request creates a short clip, not a complete 10-minute episode. Provider access, quotas and charges depend on your Google account and API project.</p>
+    </section>
+
+    <section class="panel">
+      <div class="section-head"><div><p class="eyebrow">02 / GENERATION</p><h3>Scene status</h3></div><span id="jobState" class="tag">Ready</span></div>
+      <div class="progress-track"><div id="progressBar"></div></div>
+      <p id="statusText" class="muted" aria-live="polite">Your generated scene will appear here.</p>
+      <video id="preview" controls playsinline hidden></video>
+      <a id="downloadLink" class="download" hidden download>Download MP4</a>
+      <button id="stopBtn" class="secondary" disabled>Stop tracking</button>
+    </section>
+
+    <section class="panel tips">
+      <p class="eyebrow">03 / WORKFLOW</p><h3>Making a 10-minute episode</h3>
+      <ol>
+        <li>Break the episode into short scenes.</li>
+        <li>Generate each scene separately with Veo.</li>
+        <li>Download the clips and assemble them in a video editor.</li>
+        <li>Add narration, dialogue, music and subtitles, then export the full episode.</li>
+      </ol>
+      <p class="hint">This starter app generates one clip per request. It does not yet automatically stitch scenes, create voices, or generate images.</p>
+    </section>
+    <footer>SEDUME AI PRO · Private API key stays on the server</footer>
+  </main>
+  <script src="/app.js" defer></script>
+</body>
+</html>
